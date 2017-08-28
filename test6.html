@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+ <title>For the blogger</title>
+ <style>
+  ul{
+    list-style-type:none;
+  }
+
+ </style>
+</head>
+
+<body>
+  <p>Do you need any help?</help>
+
+    <form>
+      <fieldset>
+         <legend>Question</legen>
+          <h3>I need a help</h3>
+    <ul>
+      <li>
+        <label><input type="checkbox" value="yes" onclick="selectY()">Yes</label>
+      </li>
+      <li>
+        <label><input type="checkbox" value="no" onclick="selectN()">No</label>
+      </li>
+    </ul>
+  </fieldset>
+    </form>
+  <button  onclick="time()">Now is</button>
+  <p id="time"></p>
+
+
+  <!--ADD #-->
+  <form>
+    <fieldset>
+  <legend>Adding #HashTag#</legend>
+   <input type="text" id="adding">
+   <button type="button" onclick="posting()">Submit</button>
+
+ </fieldset>
+ </form>
+   <ul id="added">
+
+   </ul>
+
+
+
+<script>
+ function selectY(){
+    alert("Contact to my Email Address: herkas413@naver.com");
+  }
+  function selectN(){
+    alert("Have a good day");
+  }
+
+//function time(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getYear();
+    var time = yyyy+1900+'년'+mm+'월'+dd+'일';
+    console.log(time);
+    document.getElementById("time").innerHTML = time;
+//}
+
+  function posting(){
+    var add = document.getElementById("adding").value;
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode("#"+add);
+    node.appendChild(textnode);
+    document.getElementById("added").appendChild(node);
+
+    }
+
+
+</script>
+
+</body>
+</html>
